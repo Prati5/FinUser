@@ -25,3 +25,10 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
+Project Setup:
+1. Please take the clone from github
+2. run npm install
+3. ng serve
+4. Project will run on port number 4200, open `http://localhost:4200/`

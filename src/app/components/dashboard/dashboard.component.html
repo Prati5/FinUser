@@ -1,0 +1,50 @@
+<div *ngIf="isUploadJson" class="popup">
+    <div class="modal-body">
+        <div class="form-group import ">
+            <form [formGroup]="uploadForm" (ngSubmit)="onUpload()">
+                <div>
+                    <input type="file" style="width:200px" name="jsonFile" (change)="onFileSelect($event)"
+                        accept=".json,.html" />
+                    <button class="btn btn-secondary btn-upload" type="submit" >Upload File</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>
+<div class="landing-page-container">
+    <div class="col-sm-12 col-lg-12 col-md-12 float-left center-container">
+        <div class="list-view-container">
+            <div class="col-sm-12 col-lg-12 text-center">
+                <h4 id="heading-title">User Details</h4>
+            </div>
+            <div class="float-right">
+                <button class="btn btn-primary " *ngIf="!isUploadJson" (click)="toggleUpload()">
+                    Upload file
+                </button>
+                <button class="margin-20 btn btn-primary" (click)="logout()">
+                    Logout
+                </button>
+            </div><br/>
+            <div class="form-row table-scroll" id="dealer-table-div">
+                <table class="table" id="dealer-table ">
+                    <thead>
+                        <tr>
+                            <th id="title">
+                                Title
+                            </th>
+                            <th id="details">
+                                Details
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="dealer-display " *ngFor="let file of fileData">
+                            <td>{{file.title}}</td>
+                            <td>{{file.body}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
